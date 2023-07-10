@@ -1,4 +1,3 @@
-import os
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import Chroma
@@ -25,7 +24,7 @@ type = 'chroma'
 
 if(type == 'chroma'):
     ##### Chroma action
-    if(os.path.exists(folder_faiss_index) and any(os.listdir(folder_faiss_index))):
+    if(os.path.exists(folder_chroma_index) and any(os.listdir(folder_chroma_index))):
         # Load Chroma index
         db_vector = Chroma(persist_directory=folder_chroma_index)
     else:
